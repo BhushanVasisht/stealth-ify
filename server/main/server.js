@@ -15,6 +15,10 @@ app.use(morgan('dev'))
 app.use(bodyParser.json())
 
 //setup routes
+app.get('/', (req,res) => {
+   res.send("Service is Healthy")
+})
+
 app.get('/stateLoc', (req ,res) => {
     return getHandler.getLoc(req, res)
 })
